@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbells Near Me - BarbellNearMe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{gym:{500:'#ef4444',600:'#dc2626',700:'#b91c1c'},iron:{700:'#262626',800:'#171717',900:'#0a0a0a'}},fontFamily:{display:['Oswald','sans-serif']}}}}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>body{font-family:'Inter',sans-serif}.font-display{font-family:'Oswald',sans-serif}</style>
+</head>
+<body class="bg-iron-900 text-white min-h-screen flex flex-col">
+    <header class="bg-iron-800 border-b border-iron-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2"><span class="text-3xl">🏋️</span><span class="font-display text-2xl font-bold">Barbell<span class="text-gym-500">NearMe</span></span></a>
+            <nav class="hidden md:flex gap-6 text-gray-300">
+                <a href="/barbells/compare.html" class="hover:text-white">Compare</a>
+                <a href="/brands.html" class="hover:text-white">Brands</a>
+                <a href="/best/under-300.html" class="hover:text-white">Under $300</a>
+                <a href="/deals.html" class="hover:text-white">Deals</a>
+            </nav>
+        </div>
+    </header>
+    <div class="bg-gradient-to-br from-iron-900 via-iron-800 to-iron-900 py-16 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-4" id="title">Find Barbells Near You</h1>
+        <p class="text-gray-400 text-lg mb-8">Discover the best barbells available in your area</p>
+        <form onsubmit="searchCity(event)" class="max-w-xl mx-auto flex gap-4"><div class="flex-1 relative"><span class="absolute left-4 top-1/2 -translate-y-1/2 text-2xl">📍</span><input type="text" id="cityInput" placeholder="Enter your city..." class="w-full pl-14 pr-4 py-4 bg-white text-gray-900 rounded-xl text-lg focus:outline-none focus:ring-2 focus:ring-gym-500"></div><button type="submit" class="bg-gym-600 hover:bg-gym-700 px-6 py-4 rounded-xl font-semibold">Search</button></form>
+    </div>
+    <div class="bg-iron-800 border-y border-iron-700 px-4 py-4 overflow-x-auto"><div class="flex gap-2 whitespace-nowrap"><span class="text-gray-400 text-sm flex items-center">Popular:</span><button onclick="setCity('new-york')" class="px-4 py-2 rounded-lg text-sm font-medium bg-iron-700 text-gray-300 hover:bg-iron-600">New York</button><button onclick="setCity('los-angeles')" class="px-4 py-2 rounded-lg text-sm font-medium bg-iron-700 text-gray-300 hover:bg-iron-600">Los Angeles</button><button onclick="setCity('chicago')" class="px-4 py-2 rounded-lg text-sm font-medium bg-iron-700 text-gray-300 hover:bg-iron-600">Chicago</button><button onclick="setCity('london')" class="px-4 py-2 rounded-lg text-sm font-medium bg-iron-700 text-gray-300 hover:bg-iron-600">London</button><button onclick="setCity('miami')" class="px-4 py-2 rounded-lg text-sm font-medium bg-iron-700 text-gray-300 hover:bg-iron-600">Miami</button></div></div>
+    <div class="max-w-7xl mx-auto px-4 py-12"><div id="results"><p class="text-gray-400 mb-6">All barbells available</p><div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div></div></div>
+    <div class="bg-iron-800 py-12 px-4"><div class="max-w-4xl mx-auto bg-gradient-to-r from-gym-700/50 to-gym-600/50 rounded-2xl p-8 text-center"><h3 class="text-2xl font-display font-bold mb-4">🏪 Want to try before you buy?</h3><p class="text-gray-300 mb-6">Find local gyms and sporting goods stores that carry barbells.</p><button class="bg-gym-600 hover:bg-gym-700 text-white px-8 py-3 rounded-xl font-semibold">Find Local Stores →</button></div></div>
+    <footer class="bg-iron-800 border-t border-iron-700 py-8 px-4 mt-auto text-center text-gray-400 text-sm">© 2026 BarbellNearMe</footer>
+    <script>
+    const urlParams=new URLSearchParams(window.location.search);let city=urlParams.get('city')||'';const barbells=[{id:1,name:'Rogue Ohio Bar',brand:'Rogue',price:295,weight:20,tensile:190000,coating:'black zinc',rating:4.8,reviews:1247,image:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400'},{id:2,name:'Eleiko Olympic Bar',brand:'Eleiko',price:795,weight:20,tensile:215000,coating:'chrome',rating:4.9,reviews:892,image:'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400'},{id:3,name:'CAP Barbell 20kg',brand:'CAP',price:129,weight:20,tensile:150000,coating:'chrome',rating:4.2,reviews:2341,image:'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400'},{id:4,name:'REP Power Bar',brand:'REP',price:349,weight:20,tensile:205000,coating:'black oxide',rating:4.7,reviews:567,image:'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400'},{id:5,name:'Rogue Boneyard Bar',brand:'Rogue',price:275,weight:20,tensile:190000,coating:'cerakote',rating:4.6,reviews:445,image:'https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=400'},{id:6,name:"Women's Training Bar",brand:'Rogue',price:245,weight:15,tensile:160000,coating:'stainless',rating:4.5,reviews:234,image:'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400'}];
+    if(city){document.getElementById('title').textContent=`Barbells in ${city.charAt(0).toUpperCase()+city.slice(1).replace(/-/g,' ')}`;document.getElementById('cityInput').value=city.replace(/-/g,' ')}
+    function render(){document.getElementById('grid').innerHTML=barbells.map(b=>`<div class="bg-iron-800 rounded-xl overflow-hidden border border-iron-700 hover:border-gym-500 transition"><div class="aspect-square overflow-hidden"><img src="${b.image}" alt="${b.name}" class="w-full h-full object-cover hover:scale-110 transition duration-300"></div><div class="p-4"><p class="text-gym-500 text-sm font-medium uppercase">${b.brand}</p><h3 class="font-semibold text-lg mt-1 mb-2">${b.name}</h3><div class="flex gap-4 text-gray-400 text-sm mb-4"><span>🏋️ ${b.weight}kg</span><span>💪 ${b.tensile.toLocaleString()} PSI</span></div><div class="flex items-center justify-between"><span class="text-2xl font-bold">$${b.price}</span><button class="bg-gym-600 hover:bg-gym-700 px-4 py-2 rounded-lg font-medium text-sm">Check Price →</button></div></div></div>`).join('')}
+    function setCity(c){window.location.href=`?city=${c}`}
+    function searchCity(e){e.preventDefault();const c=document.getElementById('cityInput').value.trim();if(c)window.location.href=`?city=${c.toLowerCase().replace(/\s+/g,'-')}`}
+    render();
+    </script>
+<p class="mt-2 text-xs text-gym-500">📢 Amazon Associate: We earn from qualifying purchases.</p>
+</body>
+</html>

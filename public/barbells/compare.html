@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compare Barbells - BarbellNearMe</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>tailwind.config={theme:{extend:{colors:{gym:{500:'#ef4444',600:'#dc2626',700:'#b91c1c'},iron:{700:'#262626',800:'#171717',900:'#0a0a0a'}},fontFamily:{display:['Oswald','sans-serif']}}}}</script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>body{font-family:'Inter',sans-serif}.font-display{font-family:'Oswald',sans-serif}</style>
+</head>
+<body class="bg-iron-900 text-white min-h-screen flex flex-col">
+    <header class="bg-iron-800 border-b border-iron-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2"><span class="text-3xl">🏋️</span><span class="font-display text-2xl font-bold">Barbell<span class="text-gym-500">NearMe</span></span></a>
+            <nav class="hidden md:flex gap-6 text-gray-300">
+                <a href="/barbells/compare.html" class="text-gym-500">Compare</a>
+                <a href="/brands.html" class="hover:text-white">Brands</a>
+                <a href="/best/under-300.html" class="hover:text-white">Under $300</a>
+                <a href="/deals.html" class="hover:text-white">Deals</a>
+            </nav>
+            <a href="/barbells/near-me.html" class="bg-gym-600 hover:bg-gym-700 px-4 py-2 rounded-lg font-medium">Find Near Me</a>
+        </div>
+    </header>
+    <div class="bg-gradient-to-br from-iron-900 via-iron-800 to-iron-900 py-16 px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-display font-bold mb-4">Compare Barbells</h1>
+        <p class="text-gray-400 text-lg">Find the perfect barbell for your training goals</p>
+    </div>
+    <div class="bg-iron-800 border-y border-iron-700 px-4 py-4">
+        <div class="max-w-7xl mx-auto flex flex-wrap gap-2">
+            <span class="text-gray-400 text-sm flex items-center">Category:</span>
+            <button onclick="filter('all')" class="px-4 py-2 rounded-lg text-sm font-medium bg-gym-600 text-white">All</button>
+            <button onclick="filter('olympic')" class="px-4 py-2 rounded-lg text-sm font-medium bg-iron-700 text-gray-300 hover:bg-iron-600">Olympic</button>
+            <button onclick="filter('powerlifting')" class="px-4 py-2 rounded-lg text-sm font-medium bg-iron-700 text-gray-300 hover:bg-iron-600">Powerlifting</button>
+            <button onclick="filter('women')" class="px-4 py-2 rounded-lg text-sm font-medium bg-iron-700 text-gray-300 hover:bg-iron-600">Women's</button>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <p class="text-gray-400 mb-6" id="count">Showing 6 barbells</p>
+        <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+    <footer class="bg-iron-800 border-t border-iron-700 py-8 px-4 mt-auto text-center text-gray-400 text-sm">© 2026 BarbellNearMe</footer>
+    <script>
+    const barbells=[{id:1,name:'Rogue Ohio Bar',brand:'Rogue',price:295,weight:20,tensile:190000,coating:'black zinc',rating:4.8,reviews:1247,category:'olympic',image: https://images.unsplash.com/photo
+    function filter(cat){const f=cat==='all'?barbells:barbells.filter(b=>b.category===cat);document.getElementById('count').textContent=`Showing ${f.length} barbells`;document.getElementById('grid').innerHTML=f.map(b=>`<div class="bg-iron-800 rounded-xl overflow-hidden border border-iron-700 hover:border-gym-500 transition"><div class="aspect-square overflow-hidden"><img src="${b.image}" alt="${b.name}" class="w-full h-full object-cover hover:scale-110 transition duration-300"></div><div class="p-4"><p class="text-gym-500 text-sm font-medium uppercase">${b.brand}</p><h3 class="font-semibold text-lg mt-1 mb-2">${b.name}</h3><div class="flex gap-4 text-gray-400 text-sm mb-4"><span>🏋️ ${b.weight}kg</span><span>💪 ${b.tensile.toLocaleString()} PSI</span></div><div class="flex items-center justify-between"><span class="text-2xl font-bold">$${b.price}</span><button class="bg-gym-600 hover:bg-gym-700 px-4 py-2 rounded-lg font-medium text-sm">Check Price →</button></div></div></div>`).join('')}
+    filter('all');
+    </script>
+<p class="mt-2 text-xs text-gym-500">📢 Amazon Associate: We earn from qualifying purchases.</p>
+</body>
+</html>

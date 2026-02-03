@@ -1,0 +1,97 @@
+import { Metadata } from 'next';
+import { MOCK_BARBELLS, getBarbellsByBrand } from '@/lib/data';
+import { Header, Footer, BarbellGrid } from '@/components';
+
+export const metadata: Metadata = {
+  title: 'Rogue Barbells - Ohio Bar, Boneyard & More | BarbellNearMe',
+  description: 'Shop Rogue Fitness barbells including the famous Ohio Bar, Boneyard Bar, and Olympic lifting bars. Made in USA with premium quality. Find the best Rogue barbell for your training.',
+  keywords: 'Rogue barbell, Rogue Ohio Bar, Rogue Fitness, boneyard bar, american made barbell, crossfit barbell',
+  openGraph: {
+    title: 'Rogue Barbells - Ohio Bar, Boneyard & More',
+    description: 'Shop Rogue Fitness barbells - the gold standard in commercial and home gyms.',
+  },
+};
+
+export default function RoguePage() {
+  const brandBarbells = getBarbellsByBrand('Rogue');
+
+  return (
+    <>
+      <Header />
+
+      {/* Hero */}
+      <div className="bg-gradient-to-br from-iron-900 via-iron-800 to-iron-900 py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="inline-flex items-center gap-2 bg-red-600/20 text-red-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+            <span>🇺🇸</span>
+            <span>Made in USA</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            Rogue Fitness Barbells
+          </h1>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            America's most trusted barbell brand. From the legendary Ohio Bar to premium competition bars, Rogue delivers unmatched quality.
+          </p>
+        </div>
+      </div>
+
+      {/* Brand Stats */}
+      <div className="bg-iron-800 border-y border-iron-700">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <p className="text-3xl font-bold text-white">Made in USA</p>
+              <p className="text-gray-400 text-sm">Columbus, Ohio</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">{brandBarbells.length}</p>
+              <p className="text-gray-400 text-sm">Barbell Models</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">190K+</p>
+              <p className="text-gray-400 text-sm">Tensile Strength</p>
+            </div>
+            <div>
+              <p className="text-3xl font-bold text-white">⭐4.8</p>
+              <p className="text-gray-400 text-sm">Avg Rating</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Barbells */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl font-display font-bold text-white mb-6">
+          Rogue Barbells ({brandBarbells.length})
+        </h2>
+        <BarbellGrid barbells={brandBarbells} columns={4} />
+      </div>
+
+      {/* About */}
+      <div className="bg-iron-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-2xl font-display font-bold text-white mb-4">
+              Why Choose Rogue?
+            </h2>
+            <p className="text-gray-400 mb-8">
+              Rogue Fitness has become the gold standard for gym equipment worldwide. Their barbells are used in CrossFit gyms, commercial facilities, and home gyms alike. Every bar is tested for quality and consistency.
+            </p>
+            <a 
+              href="https://trugritfitness.pxf.io/Z6PKV1"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
+            >
+              <span>🛒</span>
+              <span>Shop All Rogue Barbells at TruGrit Fitness</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </>
+  );
+}

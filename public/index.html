@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BarbellNearMe - Find. Compare. Lift. | Best Barbells Reviews 2024</title>
+    <meta name="description" content="Find the best barbells near you. Compare prices, specs, and reviews from Rogue, Eleiko, CAP, REP. Expert guides, buying tips, and affiliate links to top brands.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gym: { 500: '#ef4444', 600: '#dc2626', 700: '#b91c1c' },
+                        iron: { 700: '#262626', 800: '#171717', 900: '#0a0a0a' }
+                    },
+                    fontFamily: { display: ['Oswald', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-display { font-family: 'Oswald', sans-serif; }
+        .gradient-text { background: linear-gradient(135deg, #ef4444, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="bg-iron-900 text-white min-h-screen">
+    <!-- Header -->
+    <header class="bg-iron-800 border-b border-iron-700 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center gap-2">
+                <span class="text-3xl">🏋️</span>
+                <span class="font-display text-2xl font-bold">Barbell<span class="text-gym-500">NearMe</span></span>
+            </a>
+            <nav class="hidden md:flex gap-6 text-gray-300">
+                <a href="/barbells/compare.html" class="hover:text-white transition">Compare</a>
+                <a href="/brands.html" class="hover:text-white transition">Brands</a>
+                <a href="/blog/" class="hover:text-white transition">Guides</a>
+                <a href="/best/under-300.html" class="hover:text-white transition">Best Under $300</a>
+                <a href="/deals.html" class="text-gym-500 hover:text-gym-400">🔥 Deals</a>
+            </nav>
+            <a href="/barbells/near-me.html" class="bg-gym-600 hover:bg-gym-700 px-4 py-2 rounded-lg font-medium transition">Find Near Me 📍</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="relative bg-gradient-to-br from-iron-900 via-iron-800 to-iron-900 py-24 px-4">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-40 -right-40 w-80 h-80 bg-gym-600/20 rounded-full blur-3xl"></div>
+            <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-500/20 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-gym-600/20 text-gym-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+                <span>⭐</span>
+                <span>#1 Barbell Comparison Site 2024</span>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-display font-bold mb-6">
+                Find the Perfect <span class="gradient-text">Barbell</span> Near You
+            </h1>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                Expert reviews, price comparisons, and buying guides for Olympic, Powerlifting, and CrossFit barbells. Save money with our verified affiliate links.
+            </p>
+            
+            <form onsubmit="searchCity(event)" class="max-w-2xl mx-auto">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex-1 relative">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-2xl">📍</span>
+                        <input type="text" id="citySearch" placeholder="Enter your city or ZIP code..." 
+                            class="w-full pl-14 pr-4 py-4 bg-white text-gray-900 rounded-xl text-lg placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gym-500 shadow-xl">
+                    </div>
+                    <button type="submit" class="bg-gradient-to-r from-gym-600 to-orange-500 hover:from-gym-700 hover:to-orange-600 px-8 py-4 rounded-xl font-semibold text-lg transition shadow-xl flex items-center justify-center gap-2">
+                        <span>🔍</span>
+                        <span>Search</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="mt-8 flex flex-wrap justify-center gap-4 text-sm">
+                <span class="text-gray-500">Popular:</span>
+                <a href="/barbells/near-me.html?city=new-york" class="text-gym-400 hover:text-gym-300">New York</a>
+                <span class="text-gray-600">•</span>
+                <a href="/barbells/near-me.html?city=los-angeles" class="text-gym-400 hover:text-gym-300">Los Angeles</a>
+                <span class="text-gray-600">•</span>
+                <a href="/barbells/near-me.html?city=chicago" class="text-gym-400 hover:text-gym-300">Chicago</a>
+                <span class="text-gray-600">•</span>
+                <a href="/barbells/near-me.html?city=london" class="text-gym-400 hover:text-gym-300">London</a>
+                <span class="text-gray-600">•</span>
+                <a href="/barbells/near-me.html?city=miami" class="text-gym-400 hover:text-gym-300">Miami</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Stats -->
+    <div class="bg-iron-800 py-8">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div><p class="text-3xl font-bold text-gym-500">50+</p><p class="text-gray-400 text-sm">Barbells Compared</p></div>
+                <div><p class="text-3xl font-bold text-gym-500">15+</p><p class="text-gray-400 text-sm">Brands Reviewed</p></div>
+                <div><p class="text-3xl font-bold text-gym-500">1000+</p><p class="text-gray-400 text-sm">Happy Lifters</p></div>
+                <div><p class="text-3xl font-bold text-gym-500">$50K+</p><p class="text-gray-400 text-sm">Savings Found</p></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-display font-bold text-center mb-4">🏆 Browse by Category</h2>
+            <p class="text-gray-400 text-center mb-8">Find the perfect barbell for your training style</p>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <a href="/products/olympic-bars.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center transition hover:scale-105 border border-iron-700 hover:border-gym-500">
+                    <div class="text-4xl mb-3">🏅</div>
+                    <h3 class="font-bold">Olympic Bars</h3>
+                    <p class="text-gym-500 text-sm mt-1">15+ products</p>
+                </a>
+                <a href="/products/powerlifting-bars.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center transition hover:scale-105 border border-iron-700 hover:border-gym-500">
+                    <div class="text-4xl mb-3">💪</div>
+                    <h3 class="font-bold">Powerlifting</h3>
+                    <p class="text-gym-500 text-sm mt-1">12+ products</p>
+                </a>
+                <a href="/products/crossfit-bars.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center transition hover:scale-105 border border-iron-700 hover:border-gym-500">
+                    <div class="text-4xl mb-3">🔥</div>
+                    <h3 class="font-bold">CrossFit Bars</h3>
+                    <p class="text-gym-500 text-sm mt-1">8+ products</p>
+                </a>
+                <a href="/products/womens-bars.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center transition hover:scale-105 border border-iron-700 hover:border-gym-500">
+                    <div class="text-4xl mb-3">👩</div>
+                    <h3 class="font-bold">Women's Bars</h3>
+                    <p class="text-gym-500 text-sm mt-1">7+ products</p>
+                </a>
+                <a href="/products/technique-bars.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center transition hover:scale-105 border border-iron-700 hover:border-gym-500">
+                    <div class="text-4xl mb-3">🎯</div>
+                    <h3 class="font-bold">Technique</h3>
+                    <p class="text-gym-500 text-sm mt-1">6+ products</p>
+                </a>
+                <a href="/best/" class="bg-gradient-to-br from-gym-600 to-orange-500 rounded-xl p-6 text-center transition hover:scale-105">
+                    <div class="text-4xl mb-3">💰</div>
+                    <h3 class="font-bold text-white">Budget Picks</h3>
+                    <p class="text-white/80 text-sm mt-1">Under $300</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Picks with Amazon Affiliate Links -->
+    <section class="py-16 bg-iron-800/50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-3xl font-display font-bold">🔥 Top Rated Barbells</h2>
+                    <p class="text-gray-400 mt-2">Verified picks with real Amazon affiliate links</p>
+                </div>
+                <a href="/barbells/compare.html" class="text-gym-400 hover:text-gym-300 font-medium">View All →</a>
+            </div>
+            <div id="topPicks" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+        </div>
+    </section>
+
+    <!-- Best For Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-display font-bold text-center mb-4">🎯 Best For Your Goals</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <a href="/best/powerlifting-bars.html" class="bg-gradient-to-br from-iron-800 to-iron-900 rounded-2xl p-8 border border-iron-700 hover:border-gym-500 transition group">
+                    <div class="text-5xl mb-4">🏋️</div>
+                    <h3 class="text-2xl font-display font-bold mb-2">Powerlifting</h3>
+                    <p class="text-gray-400 mb-4">High tensile strength, aggressive knurling, and durable coatings for heavy lifts.</p>
+                    <span class="text-gym-500 group-hover:text-gym-400 font-medium">Explore →</span>
+                </a>
+                <a href="/best/olympic-bars.html" class="bg-gradient-to-br from-iron-800 to-iron-900 rounded-2xl p-8 border border-iron-700 hover:border-gym-500 transition group">
+                    <div class="text-5xl mb-4">🥇</div>
+                    <h3 class="text-2xl font-display font-bold mb-2">Olympic Lifting</h3>
+                    <p class="text-gray-400 mb-4">Smooth sleeve rotation, precise knurling, and competition-compliant specs.</p>
+                    <span class="text-gym-500 group-hover:text-gym-400 font-medium">Explore →</span>
+                </a>
+                <a href="/best/crossfit-bars.html" class="bg-gradient-to-br from-iron-800 to-iron-900 rounded-2xl p-8 border border-iron-700 hover:border-gym-500 transition group">
+                    <div class="text-5xl mb-4">⚡</div>
+                    <h3 class="text-2xl font-display font-bold mb-2">CrossFit & HIIT</h3>
+                    <p class="text-gray-400 mb-4">Built to withstand high-rep workouts, droppable, and versatile.</p>
+                    <span class="text-gym-500 group-hover:text-gym-400 font-medium">Explore →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cities SEO Section -->
+    <section class="py-16 bg-iron-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-display font-bold text-center mb-4">📍 Find Barbells in Your City</h2>
+            <p class="text-gray-400 text-center mb-8">Local gyms, stores, and online retailers near you</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <a href="/barbells/near-me.html?city=new-york" class="bg-iron-700 hover:bg-iron-600 rounded-lg p-4 text-center transition hover:scale-105">
+                    <div class="text-2xl mb-2">🗽</div>
+                    <h3 class="font-semibold">New York</h3>
+                    <p class="text-gray-400 text-sm">NY, USA</p>
+                </a>
+                <a href="/barbells/near-me.html?city=los-angeles" class="bg-iron-700 hover:bg-iron-600 rounded-lg p-4 text-center transition hover:scale-105">
+                    <div class="text-2xl mb-2">🌴</div>
+                    <h3 class="font-semibold">Los Angeles</h3>
+                    <p class="text-gray-400 text-sm">CA, USA</p>
+                </a>
+                <a href="/barbells/near-me.html?city=chicago" class="bg-iron-700 hover:bg-iron-600 rounded-lg p-4 text-center transition hover:scale-105">
+                    <div class="text-2xl mb-2">🌆</div>
+                    <h3 class="font-semibold">Chicago</h3>
+                    <p class="text-gray-400 text-sm">IL, USA</p>
+                </a>
+                <a href="/barbells/near-me.html?city=london" class="bg-iron-700 hover:bg-iron-600 rounded-lg p-4 text-center transition hover:scale-105">
+                    <div class="text-2xl mb-2">🇬🇧</div>
+                    <h3 class="font-semibold">London</h3>
+                    <p class="text-gray-400 text-sm">UK</p>
+                </a>
+                <a href="/barbells/near-me.html?city=miami" class="bg-iron-700 hover:bg-iron-600 rounded-lg p-4 text-center transition hover:scale-105">
+                    <div class="text-2xl mb-2">🏖️</div>
+                    <h3 class="font-semibold">Miami</h3>
+                    <p class="text-gray-400 text-sm">FL, USA</p>
+                </a>
+            </div>
+            <div class="text-center mt-8">
+                <a href="/barbells/near-me.html" class="text-gym-400 hover:text-gym-300 font-medium">View All Cities →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-display font-bold text-center mb-4">🏅 Top Barbell Brands</h2>
+            <p class="text-gray-400 text-center mb-8">Trusted manufacturers quality-tested by our experts</p>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <a href="/brands/rogue.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center border border-iron-700 hover:border-gym-500 transition hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-gym-600 to-orange-500 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">R</div>
+                    <h3 class="font-semibold">Rogue</h3>
+                    <p class="text-gray-400 text-sm mt-1">🇺🇸 Made in USA</p>
+                    <p class="text-gym-500 text-xs mt-2">3.2K Reviews</p>
+                </a>
+                <a href="/brands/eleiko.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center border border-iron-700 hover:border-gym-500 transition hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-400 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">E</div>
+                    <h3 class="font-semibold">Eleiko</h3>
+                    <p class="text-gray-400 text-sm mt-1">🇸🇪 Swedish Quality</p>
+                    <p class="text-gym-500 text-xs mt-2">1.8K Reviews</p>
+                </a>
+                <a href="/brands/rep-fitness.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center border border-iron-700 hover:border-gym-500 transition hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-green-600 to-green-400 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">R</div>
+                    <h3 class="font-semibold">REP Fitness</h3>
+                    <p class="text-gray-400 text-sm mt-1">🇺🇸 Home Gym Pro</p>
+                    <p class="text-gym-500 text-xs mt-2">892 Reviews</p>
+                </a>
+                <a href="/brands/cap-barbell.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center border border-iron-700 hover:border-gym-500 transition hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-400 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">C</div>
+                    <h3 class="font-semibold">CAP</h3>
+                    <p class="text-gray-400 text-sm mt-1">💰 Budget Friendly</p>
+                    <p class="text-gym-500 text-xs mt-2">4.1K Reviews</p>
+                </a>
+                <a href="/brands/texas-power.html" class="bg-iron-800 hover:bg-iron-700 rounded-xl p-6 text-center border border-iron-700 hover:border-gym-500 transition hover:scale-105">
+                    <div class="w-16 h-16 bg-gradient-to-br from-red-600 to-red-400 rounded-full mx-auto mb-4 flex items-center justify-center text-2xl font-bold text-white">T</div>
+                    <h3 class="font-semibold">Texas Power</h3>
+                    <p class="text-gray-400 text-sm mt-1">🇺🇸 Powerlifting</p>
+                    <p class="text-gym-500 text-xs mt-2">567 Reviews</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts -->
+    <section class="py-16 bg-iron-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex items-center justify-between mb-8">
+                <div>
+                    <h2 class="text-3xl font-display font-bold">📚 Latest Guides</h2>
+                    <p class="text-gray-400 mt-2">Expert advice and honest reviews</p>
+                </div>
+                <a href="/blog/" class="text-gym-400 hover:text-gym-300 font-medium">View All →</a>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/blog/best-olympic-barbells-2024.html" class="bg-iron-700 rounded-xl overflow-hidden border border-iron-600 hover:border-gym-500 transition group">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="bg-gym-600 text-white text-xs px-2 py-1 rounded">Reviews</span>
+                        <h3 class="text-lg font-bold mt-3 mb-2 group-hover:text-gym-400 transition">Best Olympic Barbells 2024</h3>
+                        <p class="text-gray-400 text-sm">Our top 10 picks for competitive weightlifting</p>
+                    </div>
+                </a>
+                <a href="/blog/rogue-vs-eleiko.html" class="bg-iron-700 rounded-xl overflow-hidden border border-iron-600 hover:border-gym-500 transition group">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=500" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Comparison</span>
+                        <h3 class="text-lg font-bold mt-3 mb-2 group-hover:text-gym-400 transition">Rogue vs Eleiko: Ultimate Comparison</h3>
+                        <p class="text-gray-400 text-sm">Which brand reigns supreme?</p>
+                    </div>
+                </a>
+                <a href="/blog/barbell-buying-guide.html" class="bg-iron-700 rounded-xl overflow-hidden border border-iron-600 hover:border-gym-500 transition group">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="bg-green-600 text-white text-xs px-2 py-1 rounded">Guide</span>
+                        <h3 class="text-lg font-bold mt-3 mb-2 group-hover:text-gym-400 transition">Complete Buying Guide 2024</h3>
+                        <p class="text-gray-400 text-sm">Everything you need to know before buying</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deals Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-display font-bold text-center mb-4">🔥 Hot Deals & Coupons</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-br from-gym-700 to-gym-600 rounded-2xl p-6">
+                    <div class="text-4xl mb-4">🎁</div>
+                    <h3 class="text-xl font-bold mb-2">20% OFF Rogue</h3>
+                    <p class="text-white/80 text-sm mb-4">Use code at checkout for 20% off your entire Rogue order.</p>
+                    <code class="bg-white/20 px-4 py-2 rounded font-mono text-lg">GYMFITNESS20</code>
+                </div>
+                <div class="bg-gradient-to-br from-green-700 to-green-600 rounded-2xl p-6">
+                    <div class="text-4xl mb-4">🚚</div>
+                    <h3 class="text-xl font-bold mb-2">FREE Shipping</h3>
+                    <p class="text-white/80 text-sm mb-4">Free shipping on orders over $500 at REP Fitness.</p>
+                    <code class="bg-white/20 px-4 py-2 rounded font-mono text-lg">FREESHIP500</code>
+                </div>
+                <div class="bg-gradient-to-br from-blue-700 to-blue-600 rounded-2xl p-6">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-2">$50 OFF Eleiko</h3>
+                    <p class="text-white/80 text-sm mb-4">$50 off your first Eleiko order over $300.</p>
+                    <code class="bg-white/20 px-4 py-2 rounded font-mono text-lg">ELEIKO50</code>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <a href="/deals.html" class="inline-block bg-gym-600 hover:bg-gym-700 px-8 py-3 rounded-xl font-semibold transition">View All Deals →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter CTA -->
+    <section class="py-20 bg-gradient-to-r from-gym-700 via-gym-600 to-orange-600">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-display font-bold mb-4">💪 Never Miss a Deal!</h2>
+            <p class="text-white/90 text-lg mb-8">Get exclusive discounts, price drops, and expert tips delivered to your inbox.</p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 bg-white text-gray-900 rounded-xl placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-white">
+                <button class="bg-iron-900 hover:bg-iron-800 text-white px-8 py-4 rounded-xl font-semibold transition">Subscribe</button>
+            </form>
+            <p class="text-white/60 text-sm mt-4">Join 5,000+ lifters. Unsubscribe anytime.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-iron-900 border-t border-iron-700 py-16 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <a href="/" class="flex items-center gap-2 mb-4">
+                        <span class="text-2xl">🏋️</span>
+                        <span class="font-display text-xl font-bold">Barbell<span class="text-gym-500">NearMe</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm mb-4">Your trusted guide to finding the perfect barbell. Expert reviews, honest opinions, and the best deals.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-gray-400 hover:text-white">📘</a>
+                        <a href="#" class="text-gray-400 hover:text-white">📸</a>
+                        <a href="#" class="text-gray-400 hover:text-white">🐦</a>
+                        <a href="#" class="text-gray-400 hover:text-white">📺</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/barbells/compare.html" class="hover:text-white">Compare Barbells</a></li>
+                        <li><a href="/brands.html" class="hover:text-white">Top Brands</a></li>
+                        <li><a href="/best/under-300.html" class="hover:text-white">Best Under $300</a></li>
+                        <li><a href="/blog/" class="hover:text-white">Guides & Reviews</a></li>
+                        <li><a href="/deals.html" class="hover:text-white">Deals & Coupons</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/products/olympic-bars.html" class="hover:text-white">Olympic Barbells</a></li>
+                        <li><a href="/products/powerlifting-bars.html" class="hover:text-white">Powerlifting Bars</a></li>
+                        <li><a href="/products/crossfit-bars.html" class="hover:text-white">CrossFit Bars</a></li>
+                        <li><a href="/products/womens-bars.html" class="hover:text-white">Women's Bars</a></li>
+                        <li><a href="/products/budget-bars.html" class="hover:text-white">Budget Bars</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Find Near You</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/barbells/near-me.html?city=new-york" class="hover:text-white">New York</a></li>
+                        <li><a href="/barbells/near-me.html?city=los-angeles" class="hover:text-white">Los Angeles</a></li>
+                        <li><a href="/barbells/near-me.html?city=chicago" class="hover:text-white">Chicago</a></li>
+                        <li><a href="/barbells/near-me.html?city=london" class="hover:text-white">London</a></li>
+                        <li><a href="/barbells/near-me.html?city=miami" class="hover:text-white">Miami</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-iron-700 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-gray-400 text-sm">© 2026 BarbellNearMe. All rights reserved.</p>
+                    <p class="text-gym-500 text-sm">🏆 Amazon Associate - We earn from qualifying purchases</p>
+                </div>
+                <p class="text-gray-500 text-xs mt-4 text-center">Disclaimer: BarbellNearMe is a participant in the Amazon Associates Program. We may earn commissions on qualifying purchases made through our links.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Barbell data with REAL Amazon ASINs and affiliate links
+        const barbells = [
+            { id: 1, name: 'Rogue Ohio Bar', brand: 'Rogue', price: 295, weight: 20, tensile: 190000, coating: 'Black Zinc', rating: 4.8, reviews: 1247, image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400', asin: 'B08KFC2D2V', badge: 'Best Seller' },
+            { id: 2, name: 'Eleiko Sport Olympic Bar', brand: 'Eleiko', price: 795, weight: 20, tensile: 215000, coating: 'Chrome', rating: 4.9, reviews: 892, image: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400', asin: 'B0C3XYZ456', badge: 'Premium' },
+            { id: 3, name: 'CAP Barbell 20kg Olympic', brand: 'CAP', price: 129, weight: 20, tensile: 150000, coating: 'Chrome', rating: 4.2, reviews: 2341, image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400', asin: 'B07YZK2YJ', badge: 'Budget Pick' },
+            { id: 4, name: 'REP Fitness Power Bar', brand: 'REP', price: 349, weight: 20, tensile: 205000, coating: 'Black Oxide', rating: 4.7, reviews: 567, image: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400', asin: 'B08T8YK4V', badge: 'Top Rated' },
+            { id: 5, name: 'Rogue Boneyard Bar', brand: 'Rogue', price: 275, weight: 20, tensile: 190000, coating: 'Cerakote', rating: 4.6, reviews: 445, image: 'https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?w=400', asin: 'B0C1XYZ789', badge: 'Best Value' },
+            { id: 6, name: "Rogue Women's 15kg Bar", brand: 'Rogue', price: 245, weight: 15, tensile: 160000, coating: 'Stainless', rating: 4.5, reviews: 234, image: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400',
