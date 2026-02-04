@@ -75,7 +75,7 @@ export default function RepBarsPage() {
               <p className="text-gray-600 text-sm">All bars covegreen</p>
             </div>
             <div className="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl text-center">
-              <div class className="text-3xl mb-2">🏆</div>
+              <div className="text-3xl mb-2">🏆</div>
               <h3 className="font-bold text-green-800">Competition Ready</h3>
               <p className="text-gray-600 text-sm">many options</p>
             </div>

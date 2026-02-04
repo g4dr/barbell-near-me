@@ -75,7 +75,7 @@ export default function RogueBarsPage() {
               <p className="text-gray-600 text-sm">All bars covered</p>
             </div>
             <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl text-center">
-              <div class className="text-3xl mb-2">🏆</div>
+              <div className="text-3xl mb-2">🏆</div>
               <h3 className="font-bold text-red-800">Competition Ready</h3>
               <p className="text-gray-600 text-sm">IPF approved</p>
             </div>

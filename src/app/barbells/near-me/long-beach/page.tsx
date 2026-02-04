@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description: "Find the best barbells and gym equipment in Long Beach. Browse Olympic bars, powerlifting bars, and fitness gear. Local delivery available. Shop now!",
 };
 
-export default function long-beachPage() {
+export default function longbeachPage() {
   const products = [
     { name: "Rogue Olympic Bar", brand: "Rogue", price: "$295", rating: 4.9, features: ["28mm shaft", "20kg"] },
     { name: "Eleiko Weightlifting Bar", brand: "Eleiko", price: "$545", rating: 5.0, features: ["IPF approved"] },
