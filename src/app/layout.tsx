@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     apple: '/favicon.svg',
   },
   category: 'fitness',
+  other: {
+    'mylead-verification': '7e74c5510c706f8e687dabd4421e43e2',
+  },
 };
 
 export default function RootLayout({
