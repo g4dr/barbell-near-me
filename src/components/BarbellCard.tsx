@@ -22,6 +22,7 @@ interface BarbellCardProps {
 
 export function BarbellCard({ barbell }: BarbellCardProps) {
   const [isHovered, setIsHovered] = useState(false);
+  const [src, setSrc] = useState(barbell.image_url || '/fallback-barbell.svg');
 
   return (
     <div
@@ -30,10 +31,11 @@ export function BarbellCard({ barbell }: BarbellCardProps) {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image */}
-      <div className="relative aspect-square overflow-hidden">
+      <div className="relative aspect-square overflow-hidden bg-black">
         <img
-          src={barbell.image_url}
+          src={src}
           alt={barbell.name}
+          onError={(e) => { (e.target as HTMLImageElement).src = '/fallback-barbell.svg'; setSrc('/fallback-barbell.svg'); }}
           className={`w-full h-full object-cover transition-transform duration-300 ${isHovered ? 'scale-110' : ''}`}
         />
         <div className="absolute top-3 left-3">

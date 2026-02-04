@@ -1,97 +1,99 @@
 import { Metadata } from 'next';
-import { MOCK_BARBELLS, getBarbellsByBrand } from '@/lib/data';
-import { Header, Footer, BarbellGrid } from '@/components';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Rogue Barbells - Ohio Bar, Boneyard & More | BarbellNearMe',
-  description: 'Shop Rogue Fitness barbells including the famous Ohio Bar, Boneyard Bar, and Olympic lifting bars. Made in USA with premium quality. Find the best Rogue barbell for your training.',
-  keywords: 'Rogue barbell, Rogue Ohio Bar, Rogue Fitness, boneyard bar, american made barbell, crossfit barbell',
-  openGraph: {
-    title: 'Rogue Barbells - Ohio Bar, Boneyard & More',
-    description: 'Shop Rogue Fitness barbells - the gold standard in commercial and home gyms.',
-  },
+  title: "Rogue Barbells - Complete Collection | BarbellNearMe",
+  description: "Shop the complete line of Rogue barbells. Ohio Power Bar Olympic Bar Echo and more. American made quality at competitive prices.",
 };
 
-export default function RoguePage() {
-  const brandBarbells = getBarbellsByBrand('Rogue');
+export default function RogueBarsPage() {
+  const products = [
+    { name: 'Rogue Olympic Bar', price: '$295', type: 'Olympic', rating: 4.9 },
+    { name: 'Rogue Ohio Power Bar', price: '$345', type: 'Power', rating: 4.9 },
+    { name: 'Rogue Echo Bar 2.0', price: '$199', type: 'Training', rating: 4.7 },
+    { name: 'Rogue WOD Bar', price: '$275', type: 'CrossFit', rating: 4.8 },
+    { name: 'Rogue Bella Bar 2.0', price: '$275', type: 'Womens', rating: 4.9 },
+    { name: 'Rogue C-70 Bar', price: '$445', type: 'Competition', rating: 4.8 },
+  ];
 
   return (
-    <>
-      <Header />
-
-      {/* Hero */}
-      <div className="bg-gradient-to-br from-iron-900 via-iron-800 to-iron-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-red-600/20 text-red-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span>🇺🇸</span>
-            <span>Made in USA</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-            Rogue Fitness Barbells
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            America's most trusted barbell brand. From the legendary Ohio Bar to premium competition bars, Rogue delivers unmatched quality.
-          </p>
+    <div className="min-h-screen bg-gray-50">
+      <section className="bg-gradient-to-r from-red-900 to-red-800 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Rogue Barbells</h1>
+          <p className="text-xl text-red-200 mb-6">American made quality. The choice of champions and CrossFit boxes worldwide.</p>
         </div>
-      </div>
+      </section>
 
-      {/* Brand Stats */}
-      <div className="bg-iron-800 border-y border-iron-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <p className="text-3xl font-bold text-white">Made in USA</p>
-              <p className="text-gray-400 text-sm">Columbus, Ohio</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">{brandBarbells.length}</p>
-              <p className="text-gray-400 text-sm">Barbell Models</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">190K+</p>
-              <p className="text-gray-400 text-sm">Tensile Strength</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">⭐4.8</p>
-              <p className="text-gray-400 text-sm">Avg Rating</p>
-            </div>
-          </div>
+      <nav className="bg-white border-b py-3">
+        <div className="max-w-7xl mx-auto px-4 text-sm">
+          <Link href="/" className="text-purple-600 hover:underline">Home</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <Link href="/brands" className="text-purple-600 hover:underline">Brands</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <span className="text-gray-600">Rogue</span>
         </div>
-      </div>
+      </nav>
 
-      {/* Barbells */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-display font-bold text-white mb-6">
-          Rogue Barbells ({brandBarbells.length})
-        </h2>
-        <BarbellGrid barbells={brandBarbells} columns={4} />
-      </div>
-
-      {/* About */}
-      <div className="bg-iron-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-display font-bold text-white mb-4">
-              Why Choose Rogue?
-            </h2>
-            <p className="text-gray-400 mb-8">
-              Rogue Fitness has become the gold standard for gym equipment worldwide. Their barbells are used in CrossFit gyms, commercial facilities, and home gyms alike. Every bar is tested for quality and consistency.
-            </p>
-            <a 
-              href="https://trugritfitness.pxf.io/Z6PKV1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
-            >
-              <span>🛒</span>
-              <span>Shop All Rogue Barbells at TruGrit Fitness</span>
-              <span>→</span>
-            </a>
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6">
+            {products.map((product, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="h-64 bg-gray-200 flex items-center justify-center">
+                  <span className="text-5xl">🏋️</span>
+                </div>
+                <div className="p-6">
+                  <span className="bg-red-600 text-white px-2 py-1 rounded text-sm">{product.type}</span>
+                  <h3 className="text-xl font-bold text-gray-800 mt-2">{product.name}</h3>
+                  <div className="flex items-center mt-2">
+                    <span className="text-yellow-500">★ {product.rating}</span>
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="text-2xl font-bold text-red-600">{product.price}</span>
+                    <a href="https://trugritfitness.pxf.io/Z6PKV1" target="_blank" rel="noopener noreferrer" className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-bold transition-colors">View Deal</a>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      <Footer />
-    </>
+      <section className="bg-white py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-800 mb-6">Why Choose Rogue</h2>
+          <div className="grid md:grid-cols-4 gap-4">
+            <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl text-center">
+              <div className="text-3xl mb-2">🇺🇸</div>
+              <h3 className="font-bold text-red-800">Made in USA</h3>
+              <p className="text-gray-600 text-sm">Columbus Ohio</p>
+            </div>
+            <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl text-center">
+              <div className="text-3xl mb-2">💪</div>
+              <h3 className="font-bold text-red-800">Lifetime Warranty</h3>
+              <p className="text-gray-600 text-sm">All bars covered</p>
+            </div>
+            <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl text-center">
+              <div class className="text-3xl mb-2">🏆</div>
+              <h3 className="font-bold text-red-800">Competition Ready</h3>
+              <p className="text-gray-600 text-sm">IPF approved</p>
+            </div>
+            <div className="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl text-center">
+              <div className="text-3xl mb-2">💰</div>
+              <h3 className="font-bold text-red-800">Best Value</h3>
+              <p className="text-gray-600 text-sm">Quality meets price</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-gradient-to-r from-red-600 to-red-800 text-white py-12">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Shop Rogue Barbells</h2>
+          <a href="https://trugritfitness.pxf.io/Z6PKV1" target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-red-600 px-8 py-4 rounded-lg font-bold hover:bg-gray-100 transition-colors">View All Rogue Bars</a>
+        </div>
+      </section>
+    </div>
   );
 }

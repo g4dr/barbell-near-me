@@ -1,125 +1,62 @@
-import { Metadata } from 'next';
-import { MOCK_BARBELLS } from '@/lib/data';
-import { Header, Footer, BarbellGrid } from '@/components';
+import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Buy Barbells in Los Angeles | LA Gym Equipment | BarbellNearMe',
-  description: 'Find barbells for sale in Los Angeles. Browse Olympic bars, power bars, and more available in LA. The fitness capital of the world.',
-  keywords: 'buy barbells Los Angeles, LA barbell shop, Los Angeles gym equipment, Venice beach gym, Santa Monica fitness',
-  openGraph: {
-    title: 'Find Barbells in Los Angeles',
-    description: 'Browse quality barbells available in LA. Fast delivery across Southern California.',
-  },
+  title: "Los Angeles Barbells - Buy Weightlifting Equipment in Los Angeles | BarbellNearMe",
+  description: "Find the best barbells and gym equipment in Los Angeles. Browse Olympic bars, powerlifting bars, and fitness gear. Local delivery available. Shop now!",
 };
 
-const CITY = {
-  name: 'Los Angeles',
-  state: 'CA',
-  country: 'USA',
-  slug: 'los-angeles',
-};
+export default function los-angelesPage() {
+  const products = [
+    { name: "Rogue Olympic Bar", brand: "Rogue", price: "$295", rating: 4.9, features: ["28mm shaft", "20kg"] },
+    { name: "Eleiko Weightlifting Bar", brand: "Eleiko", price: "$545", rating: 5.0, features: ["IPF approved"] },
+    { name: "Rogue Ohio Power Bar", brand: "Rogue", price: "$345", rating: 4.9, features: ["29mm shaft"] }
+  ];
 
-export default function LosAngelesPage() {
   return (
-    <>
-      <Header />
-
-      {/* Hero */}
-      <div className="bg-gradient-to-br from-iron-900 via-iron-800 to-iron-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-gym-600/20 text-gym-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span>🌴</span>
-            <span>Fitness Capital</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-            Barbells in {CITY.name}
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            From Venice Beach to Santa Monica, find quality barbells available in LA. Perfect for your home gym or commercial facility.
-          </p>
+    <div className="min-h-screen bg-gray-50">
+      <section className="bg-gradient-to-r from-purple-900 to-purple-800 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Los Angeles Barbells</h1>
+          <p className="text-xl text-purple-200 mb-6">Buy premium weightlifting equipment in Los Angeles. Fast local delivery available.</p>
         </div>
-      </div>
+      </section>
 
-      {/* City Info */}
-      <div className="bg-iron-800 border-y border-iron-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <p className="text-3xl font-bold text-white">3.9M</p>
-              <p className="text-gray-400 text-sm">Population</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">Year-round</p>
-              <p className="text-gray-400 text-sm">Outdoor Training</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">World Class</p>
-              <p className="text-gray-400 text-sm">Gym Scene</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">🏖️</p>
-              <p className="text-gray-400 text-sm">Beach Workouts</p>
-            </div>
+      <nav className="bg-white border-b py-3">
+        <div className="max-w-7xl mx-auto px-4 text-sm">
+          <Link href="/" className="text-purple-600 hover:underline">Home</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <Link href="/barbells/near-me" className="text-purple-600 hover:underline">Near Me</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <span className="text-gray-600">Los Angeles</span>
+        </div>
+      </nav>
+
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6">
+            {products.map((product, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6">
+                <span className="bg-purple-600 text-white px-2 py-1 rounded text-sm">{product.brand}</span>
+                <h3 className="text-xl font-bold text-gray-800 mt-3">{product.name}</h3>
+                <div className="text-yellow-500 mt-1">★ {product.rating}</div>
+                <p className="text-gray-600 mt-2">{product.features.join(" • ")}</p>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-2xl font-bold text-purple-600">{product.price}</span>
+                  <a href="https://trugritfitness.pxf.io/Z6PKV1" className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold">Buy Now</a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Barbells */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <h2 className="text-2xl font-display font-bold text-white mb-2">
-            Available Barbells in {CITY.name}, {CITY.state}
-          </h2>
-          <p className="text-gray-400">
-            {MOCK_BARBELLS.length} barbells ready for delivery across Los Angeles County
-          </p>
+      <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-12">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Shop in Los Angeles</h2>
+          <a href="https://trugritfitness.pxf.io/Z6PKV1" className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-bold">View All</a>
         </div>
-        <BarbellGrid barbells={MOCK_BARBELLS} columns={4} />
-      </div>
-
-      {/* Local SEO */}
-      <div className="bg-iron-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-display font-bold text-white mb-4">
-              🏋️ LA Fitness Culture
-            </h2>
-            <p className="text-gray-400 mb-8">
-              Los Angeles is synonymous with fitness. From the legendary Gold's Gym in Venice Beach to celebrity-endorsed boutique studios, LA takes fitness seriously. Find the perfect barbell to fuel your training in the City of Angels.
-            </p>
-            <a 
-              href="https://trugritfitness.pxf.io/Z6PKV1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gym-600 hover:bg-gym-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
-            >
-              <span>🛒</span>
-              <span>Shop Barbells at TruGrit Fitness</span>
-              <span>→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            name: `BarbellNearMe - ${CITY.name}`,
-            description: `Find barbells and gym equipment in ${CITY.name}, ${CITY.state}`,
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: CITY.name,
-              addressRegion: CITY.state,
-              addressCountry: CITY.country,
-            },
-          }),
-        }}
-      />
-
-      <Footer />
-    </>
+      </section>
+    </div>
   );
 }

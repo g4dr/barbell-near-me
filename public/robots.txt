@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: http://207.244.246.189/sitemap.xml
+Sitemap: https://barbellnearme.com/sitemap.xml
 
 # Disallow admin/private paths
 Disallow: /api/

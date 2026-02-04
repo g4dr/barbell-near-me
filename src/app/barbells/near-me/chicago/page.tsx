@@ -1,125 +1,62 @@
-import { Metadata } from 'next';
-import { MOCK_BARBELLS } from '@/lib/data';
-import { Header, Footer, BarbellGrid } from '@/components';
+import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: 'Buy Barbells in Chicago | Windy City Gym Equipment | BarbellNearMe',
-  description: 'Find barbells for sale in Chicago. Browse Olympic bars, power bars, and more available in the Windy City. Free shipping in Illinois.',
-  keywords: 'buy barbells Chicago, Chicago gym equipment, Windy City barbell, Illinois fitness equipment, Chicago home gym',
-  openGraph: {
-    title: 'Find Barbells in Chicago',
-    description: 'Quality barbells available in Chicago. Fast delivery across the Midwest.',
-  },
+  title: "Chicago Barbells - Buy Weightlifting Equipment in Chicago | BarbellNearMe",
+  description: "Find the best barbells and gym equipment in Chicago. Browse Olympic bars, powerlifting bars, and fitness gear. Local delivery available. Shop now!",
 };
 
-const CITY = {
-  name: 'Chicago',
-  state: 'IL',
-  country: 'USA',
-  slug: 'chicago',
-};
+export default function chicagoPage() {
+  const products = [
+    { name: "Rogue Olympic Bar", brand: "Rogue", price: "$295", rating: 4.9, features: ["28mm shaft", "20kg"] },
+    { name: "Eleiko Weightlifting Bar", brand: "Eleiko", price: "$545", rating: 5.0, features: ["IPF approved"] },
+    { name: "Rogue Ohio Power Bar", brand: "Rogue", price: "$345", rating: 4.9, features: ["29mm shaft"] }
+  ];
 
-export default function ChicagoPage() {
   return (
-    <>
-      <Header />
-
-      {/* Hero */}
-      <div className="bg-gradient-to-br from-iron-900 via-iron-800 to-iron-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-600/20 text-blue-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span>🌬️</span>
-            <span>The Windy City</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-            Barbells in {CITY.name}
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            From the Loop to Wrigleyville, find quality barbells available in Chicago. Build your home gym in the heart of the Midwest.
-          </p>
+    <div className="min-h-screen bg-gray-50">
+      <section className="bg-gradient-to-r from-purple-900 to-purple-800 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Chicago Barbells</h1>
+          <p className="text-xl text-purple-200 mb-6">Buy premium weightlifting equipment in Chicago. Fast local delivery available.</p>
         </div>
-      </div>
+      </section>
 
-      {/* City Info */}
-      <div className="bg-iron-800 border-y border-iron-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <p className="text-3xl font-bold text-white">2.7M</p>
-              <p className="text-gray-400 text-sm">Population</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">77</p>
-              <p className="text-gray-400 text-sm">Neighborhoods</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">Strong</p>
-              <p className="text-gray-400 text-sm">Lifting Culture</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">❄️</p>
-              <p className="text-gray-400 text-sm">Indoor Training</p>
-            </div>
+      <nav className="bg-white border-b py-3">
+        <div className="max-w-7xl mx-auto px-4 text-sm">
+          <Link href="/" className="text-purple-600 hover:underline">Home</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <Link href="/barbells/near-me" className="text-purple-600 hover:underline">Near Me</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <span className="text-gray-600">Chicago</span>
+        </div>
+      </nav>
+
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6">
+            {products.map((product, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6">
+                <span className="bg-purple-600 text-white px-2 py-1 rounded text-sm">{product.brand}</span>
+                <h3 className="text-xl font-bold text-gray-800 mt-3">{product.name}</h3>
+                <div className="text-yellow-500 mt-1">★ {product.rating}</div>
+                <p className="text-gray-600 mt-2">{product.features.join(" • ")}</p>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-2xl font-bold text-purple-600">{product.price}</span>
+                  <a href="https://trugritfitness.pxf.io/Z6PKV1" className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold">Buy Now</a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Barbells */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="mb-8">
-          <h2 className="text-2xl font-display font-bold text-white mb-2">
-            Available Barbells in {CITY.name}, {CITY.state}
-          </h2>
-          <p className="text-gray-400">
-            {MOCK_BARBELLS.length} barbells ready for delivery across Chicago
-          </p>
+      <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-12">
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Shop in Chicago</h2>
+          <a href="https://trugritfitness.pxf.io/Z6PKV1" className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-bold">View All</a>
         </div>
-        <BarbellGrid barbells={MOCK_BARBELLS} columns={4} />
-      </div>
-
-      {/* Local SEO */}
-      <div className="bg-iron-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-display font-bold text-white mb-4">
-              🏋️ Chicago's Fitness Scene
-            </h2>
-            <p className="text-gray-400 mb-8">
-              Chicago has a thriving fitness community, from Logan Square's boutique gyms to the historic commercial facilities downtown. Whether you're training through a Chicago winter or enjoying summer at the lakefront, having quality home gym equipment is essential.
-            </p>
-            <a 
-              href="https://trugritfitness.pxf.io/Z6PKV1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors"
-            >
-              <span>🛒</span>
-              <span>Shop Barbells at TruGrit Fitness</span>
-              <span>→</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'LocalBusiness',
-            name: `BarbellNearMe - ${CITY.name}`,
-            description: `Find barbells and gym equipment in ${CITY.name}, ${CITY.state}`,
-            address: {
-              '@type': 'PostalAddress',
-              addressLocality: CITY.name,
-              addressRegion: CITY.state,
-              addressCountry: CITY.country,
-            },
-          }),
-        }}
-      />
-
-      <Footer />
-    </>
+      </section>
+    </div>
   );
 }

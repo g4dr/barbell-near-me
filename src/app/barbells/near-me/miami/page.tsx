@@ -1,81 +1,62 @@
-import type { Metadata } from 'next';
+import { Metadata } from "next";
+import Link from "next/link";
 
-import { Header, Footer, BarbellGrid } from '@/components';
-import { MOCK_BARBELLS } from '@/lib/data';
+export const metadata: Metadata = {
+  title: "Miami Barbells - Buy Weightlifting Equipment in Miami | BarbellNearMe",
+  description: "Find the best barbells and gym equipment in Miami. Browse Olympic bars, powerlifting bars, and fitness gear. Local delivery available. Shop now!",
+};
 
+export default function miamiPage() {
+  const products = [
+    { name: "Rogue Olympic Bar", brand: "Rogue", price: "$295", rating: 4.9, features: ["28mm shaft", "20kg"] },
+    { name: "Eleiko Weightlifting Bar", brand: "Eleiko", price: "$545", rating: 5.0, features: ["IPF approved"] },
+    { name: "Rogue Ohio Power Bar", brand: "Rogue", price: "$345", rating: 4.9, features: ["29mm shaft"] }
+  ];
 
-const CITY_BARBELLS = MOCK_BARBELLS;
-
-export default function MiamiPage() {
   return (
-    <>
-      <Header />
-
-      {/* Hero */}
-      <div className="bg-gradient-to-br from-iron-900 via-iron-800 to-iron-900 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 bg-purple-600/20 text-purple-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
-            <span>🌴</span>
-            <span>Magic City</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-            Barbells in Miami
-          </h1>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Build your Miami home gym with premium barbells. Fast delivery across Florida.
-          </p>
+    <div className="min-h-screen bg-gray-50">
+      <section className="bg-gradient-to-r from-purple-900 to-purple-800 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Miami Barbells</h1>
+          <p className="text-xl text-purple-200 mb-6">Buy premium weightlifting equipment in Miami. Fast local delivery available.</p>
         </div>
-      </div>
+      </section>
 
-      {/* Quick Stats */}
-      <div className="bg-iron-800 border-y border-iron-700">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div>
-              <p className="text-3xl font-bold text-white">450K</p>
-              <p className="text-gray-400 text-sm">Population</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">100+</p>
-              <p className="text-gray-400 text-sm">Fitness Studios</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-purple-400">⭐ 4.8</p>
-              <p className="text-gray-400 text-sm">Avg Rating</p>
-            </div>
-            <div>
-              <p className="text-3xl font-bold text-white">$295+</p>
-              <p className="text-gray-400 text-sm">Starting Price</p>
-            </div>
+      <nav className="bg-white border-b py-3">
+        <div className="max-w-7xl mx-auto px-4 text-sm">
+          <Link href="/" className="text-purple-600 hover:underline">Home</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <Link href="/barbells/near-me" className="text-purple-600 hover:underline">Near Me</Link>
+          <span className="mx-2 text-gray-400">/</span>
+          <span className="text-gray-600">Miami</span>
+        </div>
+      </nav>
+
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-6">
+            {products.map((product, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-lg p-6">
+                <span className="bg-purple-600 text-white px-2 py-1 rounded text-sm">{product.brand}</span>
+                <h3 className="text-xl font-bold text-gray-800 mt-3">{product.name}</h3>
+                <div className="text-yellow-500 mt-1">★ {product.rating}</div>
+                <p className="text-gray-600 mt-2">{product.features.join(" • ")}</p>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-2xl font-bold text-purple-600">{product.price}</span>
+                  <a href="https://trugritfitness.pxf.io/Z6PKV1" className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-bold">Buy Now</a>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Products */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 className="text-2xl font-display font-bold text-white mb-6">
-          🏋️ Top Barbells for Miami
-        </h2>
-        <BarbellGrid barbells={CITY_BARBELLS} columns={4} />
-      </div>
-
-      {/* CTA */}
-      <div className="bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700 py-16">
+      <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-12">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-display font-bold text-white mb-4">
-            Get Your Barbell Delivered to Miami
-          </h2>
-          <p className="text-white/80 mb-8">
-            Shop TruGrit Fitness for fast delivery to Miami.
-          </p>
-          <a href="https://trugritfitness.pxf.io/Z6PKV1" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white text-purple-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors">
-            <span>Shop Barbells</span>
-            <span>→</span>
-          </a>
+          <h2 className="text-3xl font-bold mb-4">Shop in Miami</h2>
+          <a href="https://trugritfitness.pxf.io/Z6PKV1" className="inline-block bg-white text-purple-600 px-8 py-4 rounded-lg font-bold">View All</a>
         </div>
-      </div>
-
-      <Footer />
-    </>
+      </section>
+    </div>
   );
 }
