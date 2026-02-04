@@ -1,37 +1,33 @@
-import type { Metadata } from 'next';
-import { Header, Footer, BarbellGrid } from '@/components';
-import { MOCK_BARBELLS, BARBELL_AFFILIATE_URL } from '@/lib/data';
+import { Metadata } from 'next';
+import Link from 'next/link';
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Best Barbells Under $300 - Budget Barbell Guide 2026',
-  description: 'Find quality barbells under $300. Our expert guide covers the best budget-friendly options for home gyms.',
-  keywords: 'best barbell under 300, budget barbell guide, affordable barbell, cheap barbell, garage gym barbell',
+    title: "Budget Barbell Guide | BarbellNearMe",
+    description: "Complete guide to choosing the right barbell for your training.",
 };
 
-const budgetBarbells = MOCK_BARBELLS.filter(b => b.price <= 300);
-
-export default function BudgetBarbellGuidePage() {
-  return (
-    <>
-      <Header />
-      <div className="bg-gradient-to-br from-green-900/50 via-iron-900 to-iron-800 py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
-            Best Barbells Under $300
-          </h1>
-          <p className="text-gray-400 text-lg">Quality without breaking the bank</p>
-        </div>
-      </div>
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        <p className="text-gray-400 mb-8">You don't need to spend a fortune for quality. These barbells offer excellent value for home gyms.</p>
-        <BarbellGrid barbells={budgetBarbells} columns={3} />
-        <div className="text-center mt-8">
-          <a href={BARBELL_AFFILIATE_URL} target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold">
-            Shop Budget Barbells →
-          </a>
-        </div>
-      </div>
-      <Footer />
-    </>
-  );
+export default function BudgetbarbellsPage() {
+    return (
+        <>
+            <Header />
+            <main className="min-h-screen bg-gray-50">
+                <section className="bg-gradient-to-r from-green-900 to-green-800 text-white py-16">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4">Budget Barbell Guide</h1>
+                        <p className="text-xl text-green-200 mb-6">Expert guide to finding your perfect barbell.</p>
+                    </div>
+                </section>
+                <section className="py-12">
+                    <div className="max-w-7xl mx-auto px-4">
+                        <h2 className="text-2xl font-bold mb-4">Complete Guide</h2>
+                        <p>Everything you need to know about choosing the right barbell.</p>
+                        <a href="https://trugritfitness.pxf.io/Z6PKV1" className="inline-block bg-green-600 text-white px-6 py-3 rounded-lg mt-4">Shop Now</a>
+                    </div>
+                </section>
+            </main>
+            <Footer />
+        </>
+    );
 }

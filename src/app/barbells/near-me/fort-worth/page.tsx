@@ -4,24 +4,24 @@ import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-    title: "Fresno Barbells | BarbellNearMe",
-    description: "Find the best barbells and gym equipment in Fresno. Local delivery available.",
+    title: "Fort Worth Barbells | BarbellNearMe",
+    description: "Find the best barbells and gym equipment in Fort Worth. Local delivery available.",
 };
 
-export default function FresnoPage() {
+export default function FortworthPage() {
     return (
         <>
             <Header />
             <main className="min-h-screen bg-gray-50">
                 <section className="bg-gradient-to-r from-purple-900 to-purple-800 text-white py-16">
                     <div className="max-w-7xl mx-auto px-4">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-4">Fresno Barbells</h1>
-                        <p className="text-xl text-purple-200 mb-6">Buy barbells in Fresno. Fast local delivery.</p>
+                        <h1 className="text-4xl md:text-5xl font-bold mb-4">Fort Worth Barbells</h1>
+                        <p className="text-xl text-purple-200 mb-6">Buy barbells in Fort Worth. Fast local delivery.</p>
                     </div>
                 </section>
                 <section className="py-12">
                     <div className="max-w-7xl mx-auto px-4 text-center">
-                        <p className="mb-4">Shop the best barbells delivered to Fresno.</p>
+                        <p className="mb-4">Shop the best barbells delivered to Fort Worth.</p>
                         <a href="https://trugritfitness.pxf.io/Z6PKV1" className="inline-block bg-purple-600 text-white px-6 py-3 rounded-lg">Shop Now</a>
                     </div>
                 </section>
