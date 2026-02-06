@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import FastBurnPopup from '@/components/FastBurnPopup';
 
 export const metadata: Metadata = {
   title: {
@@ -383,6 +384,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-iron-900 text-white min-h-screen flex flex-col font-sans antialiased">
+        <FastBurnPopup />
         {children}
       </body>
     </html>

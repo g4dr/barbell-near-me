@@ -76,29 +76,29 @@ export default function FastBurnPopup() {
 
           {/* Headline */}
           <h3 className="text-white text-xl font-bold text-center mb-2 leading-tight">
-            torchez les graisses
+            BURN FAT
             <br />
-            <span className="text-yellow-300">10x plus vite</span>
+            <span className="text-yellow-300">3X FASTER</span>
           </h3>
 
           {/* Subheadline */}
           <p className="text-white/90 text-sm text-center mb-4">
-            Le supplément brûle-graisses #1 pour optimiser vos séances de musculation
+            The #1 fat burner supplement to optimize your workouts
           </p>
 
           {/* Benefits */}
           <ul className="text-white/80 text-xs space-y-2 mb-4">
             <li className="flex items-center gap-2">
               <span className="text-yellow-300">✓</span>
-              Accélère le métabolisme
+              Accelerates metabolism
             </li>
             <li className="flex items-center gap-2">
               <span className="text-yellow-300">✓</span>
-              Plus d'énergie pour vos training
+              More energy for training
             </li>
             <li className="flex items-center gap-2">
               <span className="text-yellow-300">✓</span>
-              Résultats visibles en 2-3 semaines
+              Visible results in 2-3 weeks
             </li>
           </ul>
 
@@ -109,19 +109,19 @@ export default function FastBurnPopup() {
             rel="noopener noreferrer"
             className="block w-full bg-white text-orange-600 font-bold text-center py-3 px-4 rounded-xl hover:bg-yellow-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            🔥 J'ACHÈTE MAINTENANT
+            🔥 BUY NOW
           </a>
 
           {/* Urgency */}
           <p className="text-center text-white/70 text-xs mt-3">
-            ⏰ Offre expire bientôt
+            ⏰ Offer expires soon
           </p>
         </div>
 
         {/* Bottom Strip */}
         <div className="bg-black/10 py-2 px-4">
           <p className="text-center text-white/60 text-xs">
-            🚚 Livraison gratuite | 🔒 Paiement sécurisé
+            🚚 Free Shipping | 🔒 Secure Payment
           </p>
         </div>
       </div>
