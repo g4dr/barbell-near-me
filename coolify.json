@@ -1,0 +1,33 @@
+{
+  "name": "barbellnearme",
+  "description": "Barbell comparison site",
+  "domains": [
+    {
+      "fqdn": "barbellnearme.com",
+      "www": true,
+      "ssl": true,
+      "generateApi": false
+    }
+  ],
+  "source": {
+    "type": "git",
+    "url": "https://github.com/g4dr/barbell-near-me",
+    "branch": "main"
+  },
+  "build": {
+    "command": "npm install && npm run build",
+    "workdir": "/root/clawd/barbell-near-me"
+  },
+  "start": {
+    "command": "npm start",
+    "port": 3000,
+    "workdir": "/root/clawd/barbell-near-me"
+  },
+  "健康检查": {
+    "port": 3000,
+    "path": "/",
+    "interval": 10,
+    "timeout": 5,
+    "retries": 3
+  }
+}

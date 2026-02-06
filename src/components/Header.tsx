@@ -46,9 +46,9 @@ export function Header() {
 
           {/* CTA */}
           <div className="flex items-center space-x-4">
-            <button className="bg-gym-600 hover:bg-gym-700 text-white px-4 py-2 rounded-lg font-medium transition">
+            <Link href="/barbells/near-me" className="bg-gym-600 hover:bg-gym-700 text-white px-4 py-2 rounded-lg font-medium transition">
               Find Near Me
-            </button>
+            </Link>
           </div>
         </div>
       </div>

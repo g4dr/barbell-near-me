@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  barbellnearme:
+    image: node:20-alpine
+    container_name: barbellnearme
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+    command: sh -c "npm install && npm run build && npm start"
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    labels:
+      - "coolify.managed=true"
