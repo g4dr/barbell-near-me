@@ -56,6 +56,34 @@ export default function GuidePage() {
                         <a href="https://trugritfitness.pxf.io/Z6PKV1" className="inline-block bg-white text-orange-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition">Shop Now</a>
                     </div>
                 </section>
+
+                <section className="bg-gray-100 py-16">
+                    <div className="max-w-4xl mx-auto px-4">
+                        <h2 className="text-3xl font-bold text-gray-800 mb-8">Frequently Asked Questions</h2>
+                        
+                        <div className="bg-white p-6 rounded-xl mb-6">
+                            <h3 className="text-xl font-bold text-orange-800 mb-3">What is the best barbell for beginners?</h3>
+                            <p className="text-gray-600">The best barbell for beginners is a versatile Olympic-style bar with a 28mm shaft and moderate knurling. Bars in the $200-300 range like the Rogue Ohio Bar or REP PR-4000 offer the best balance of quality and affordability for new lifters.</p>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-xl mb-6">
+                            <h3 className="text-xl font-bold text-orange-800 mb-3">How much does a quality barbell cost?</h3>
+                            <p className="text-gray-600">Quality barbells range from $100 for budget options to $800+ for premium competition bars. Most home gym owners find excellent value in the $200-400 range with bars like the Rogue Ohio Bar ($295) or Eleiko Sport ($445).</p>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-xl mb-6">
+                            <h3 className="text-xl font-bold text-orange-800 mb-3">What's the difference between Olympic and power bars?</h3>
+                            <p className="text-gray-600">Olympic bars have 28mm shafts, dual knurl marks, and smooth sleeve rotation for weightlifting movements. Power bars have 29mm+ shafts, aggressive single-position knurling, and minimal whip for maximal lifts.</p>
+                        </div>
+
+                        <div className="bg-white p-6 rounded-xl mb-6">
+                            <h3 className="text-xl font-bold text-orange-800 mb-3">Rogue vs Eleiko - which should I choose?</h3>
+                            <p className="text-gray-600">Choose Rogue for value and USA-made quality. Choose Eleiko for premium Swedish craftsmanship and competition use. Both are excellent; Rogue offers better value under $400, while Eleiko excels above $500.</p>
+                        </div>
+
+                        <p className="text-sm text-gray-500 mt-8">*Last updated: February 2026*</p>
+                    </div>
+                </section>
             </main>
             <Footer />
         </>

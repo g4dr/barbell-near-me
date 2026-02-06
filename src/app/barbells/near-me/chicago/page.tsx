@@ -79,7 +79,37 @@ export default function ChicagoPage() {
             <a href="https://trugritfitness.pxf.io/Z6PKV1" className="inline-block bg-white text-blue-600 px-8 py-4 rounded-xl font-bold text-lg hover:bg-yellow-300 transition">🏋️ Get Gear</a>
           </div>
         </section>
-      </main>
+      
+      {/* Related Articles */}
+      <section className="py-8 bg-iron-800">
+        <div className="max-w-4xl mx-auto px-4">
+          <h3 className="text-xl font-bold mb-4 text-white">Related Articles</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <Link href="/guide/how-to-choose-barbell" className="text-gym-400 hover:underline">
+              How to Choose the Right Barbell
+            </Link>
+            <Link href="/best/best-olympic-barbell" className="text-gym-400 hover:underline">
+              Best Olympic Barbells 2026
+            </Link>
+          </div>
+        </div>
+      </section>
+
+
+      <section className="py-8 bg-iron-900">
+        <div className="max-w-4xl mx-auto px-4">
+          <h3 className="text-xl font-bold mb-4 text-white">Chicago Resources</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <Link href="/guide/barbell-buying-guide" className="text-gym-400 hover:underline">
+              Complete Barbell Buying Guide
+            </Link>
+            <Link href="/barbells/best" className="text-gym-400 hover:underline">
+              Best Barbells 2026
+            </Link>
+          </div>
+        </div>
+      </section>
+</main>
       <Footer />
     </>
   );

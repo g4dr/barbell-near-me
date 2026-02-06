@@ -36,7 +36,7 @@ export default function NearMePage() {
         <section className="bg-gradient-to-br from-gym-900 via-purple-900 to-gym-800 text-white py-20">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              🗺️ Find Barbells Near You
+              Find Barbells Near You
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
               Search for barbells and gym equipment in your city. We deliver to 68+ cities across the United States.
@@ -67,57 +67,11 @@ export default function NearMePage() {
           </div>
         </section>
 
-        {/* Popular Cities */}
-        <section className="py-16">
-          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-3xl font-display font-bold text-gray-800 text-center mb-8">
-              🏙️ Browse by City
-            </h2>
-            
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-              {CITIES.slice(0, 36).map((city) => (
-                <Link
-                  key={city}
-                  href={`/barbells/near-me/${city}`}
-                  className="bg-white p-4 rounded-xl text-center hover:bg-gym-50 hover:text-gym-600 transition-colors border border-gray-200 shadow-sm hover:shadow-md"
-                >
-                  <span className="text-2xl mb-2 block">
-                    {city === 'new-york' ? '🗽' : 
-                     city === 'los-angeles' ? '🌴' : 
-                     city === 'miami' ? '🌴' : 
-                     city === 'chicago' ? '🌬️' : 
-                     city === 'houston' ? '🌵' : 
-                     city === 'seattle' ? '☕' : 
-                     city === 'denver' ? '🏔️' : 
-                     city === 'san-francisco' ? '🌉' : 
-                     city === 'las-vegas' ? '🎰' : 
-                     city === 'boston' ? '🍵' : 
-                     city === 'atlanta' ? '🐖' : 
-                     '🏙️'}
-                  </span>
-                  <span className="font-medium capitalize">
-                    {city.replace(/-/g, ' ')}
-                  </span>
-                </Link>
-              ))}
-            </div>
-            
-            <div className="text-center mt-8">
-              <Link 
-                href="#all-cities"
-                className="text-gym-600 hover:text-gym-700 font-medium"
-              >
-                View All 68 Cities →
-              </Link>
-            </div>
-          </div>
-        </section>
-
         {/* All Cities */}
         <section id="all-cities" className="py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <h2 className="text-2xl font-display font-bold text-gray-800 mb-8">
-              📋 All Available Cities
+              All Available Cities
             </h2>
             
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-3">
@@ -138,7 +92,7 @@ export default function NearMePage() {
         <section className="py-16 bg-gradient-to-r from-purple-700 via-purple-600 to-purple-700">
           <div className="max-w-4xl mx-auto px-4 text-center">
             <h2 className="text-3xl font-display font-bold text-white mb-4">
-              🏋️ Ready to Lift?
+              Ready to Lift?
             </h2>
             <p className="text-white/80 mb-8">
               Shop quality barbells delivered to your door
@@ -149,7 +103,6 @@ export default function NearMePage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white text-purple-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-colors"
             >
-              <span>🛒</span>
               <span>Shop Barbells</span>
               <span>→</span>
             </a>
