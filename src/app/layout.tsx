@@ -384,6 +384,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-iron-900 text-white min-h-screen flex flex-col font-sans antialiased">
+        <FastBurnPopup />
         {children}
         <FastBurnPopup />
       </body>

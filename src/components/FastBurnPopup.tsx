@@ -1,25 +1,13 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-interface FastBurnPopupProps {
-  affiliateLink?: string;
-  showOnRoutes?: string[];
-}
-
-const FASTBURN_POPUP: FastBurnPopupProps = {
-  affiliateLink: "https://top-deal.me/a/NkRQzIjjYnHREwo",
-};
-
-export default function FastBurnPopup({
-  affiliateLink = FASTBURN_POPUP.affiliateLink,
-}: FastBurnPopupProps) {
+export default function FastBurnPopup() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isClosed, setIsClosed] = useState(false);
-  const [timeLeft, setTimeLeft] = useState({ minutes: 14, seconds: 59 });
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
-    // Show popup after 3 seconds delay
+    // Show popup after 3 seconds
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 3000);
@@ -27,136 +15,131 @@ export default function FastBurnPopup({
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    // Countdown timer
-    const timer = setInterval(() => {
-      if (timeLeft.seconds > 0) {
-        setTimeLeft({ ...timeLeft, seconds: timeLeft.seconds - 1 });
-      } else {
-        if (timeLeft.minutes > 0) {
-          setTimeLeft({ minutes: timeLeft.minutes - 1, seconds: 59 });
-        }
-      }
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, [timeLeft]);
-
   const handleClose = () => {
-    setIsVisible(false);
-    setIsClosed(true);
+    setIsClosing(true);
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 300);
   };
 
-  const handleClick = () => {
-    // Open affiliate link in new tab
-    window.open(affiliateLink, "_blank");
-  };
-
-  if (isClosed) return null;
+  if (!isVisible) return null;
 
   return (
     <>
+      {/* Overlay to capture attention */}
+      <div 
+        className="fixed inset-0 bg-black/20 z-40 lg:hidden"
+        onClick={handleClose}
+      />
+      
       {/* Popup Container */}
-      <div
-        className={`fixed bottom-4 left-4 z-50 max-w-sm w-full transition-all duration-500 ease-out transform ${
-          isVisible
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 translate-y-8 pointer-events-none"
-        }`}
-        style={{ animation: "slideUpFade 0.5s ease-out" }}
+      <div 
+        className={`
+          fixed bottom-4 left-4 z-50
+          w-[360px] max-w-[calc(100vw-2rem)]
+          bg-gradient-to-br from-orange-500 via-red-500 to-pink-600
+          rounded-2xl shadow-2xl overflow-hidden
+          transform transition-all duration-500 ease-out
+          ${isClosing ? 'opacity-0 translate-y-4 scale-95' : 'opacity-100 translate-y-0 scale-100'}
+          animate-slideUpFade
+        `}
+        style={{
+          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255,255,255,0.1)'
+        }}
       >
-        <div className="bg-gradient-to-br from-red-600 via-red-700 to-orange-600 rounded-xl shadow-2xl overflow-hidden border border-orange-400/30">
-          {/* Close Button */}
-          <button
-            onClick={handleClose}
-            className="absolute top-2 right-2 text-white/70 hover:text-white transition-colors z-10"
-            aria-label="Close popup"
-          >
-            <svg
-              className="w-5 h-5"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
+        {/* Close Button */}
+        <button
+          onClick={handleClose}
+          className="absolute top-2 right-2 w-8 h-8 rounded-full bg-black/20 hover:bg-black/40 flex items-center justify-center transition-colors"
+          aria-label="Close popup"
+        >
+          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
 
-          {/* Urgency Badge */}
-          <div className="bg-orange-500 text-white text-center py-1 px-3 text-sm font-bold">
-            🔥 LIMITED TIME OFFER - {timeLeft.minutes}:{timeLeft.seconds.toString().padStart(2, "0")} LEFT
+        {/* Badge */}
+        <div className="absolute -top-10 -left-2">
+          <div className="bg-yellow-400 text-orange-900 px-4 py-1 rounded-full text-sm font-bold shadow-lg animate-pulse">
+            🔥 HOT OFFER
           </div>
+        </div>
 
-          {/* Content */}
-          <div className="p-5">
-            {/* Fire Icon */}
-            <div className="flex justify-center mb-3">
-              <div className="text-5xl animate-pulse">🔥</div>
+        {/* Content */}
+        <div className="p-5">
+          {/* Product Image Placeholder */}
+          <div className="flex justify-center mb-4">
+            <div className="w-24 h-24 bg-white/20 rounded-xl flex items-center justify-center backdrop-blur-sm">
+              <span className="text-4xl">💪</span>
             </div>
-
-            {/* Headline */}
-            <h3 className="text-white text-xl font-bold text-center mb-2 leading-tight">
-              BURN FAT 3X FASTER
-            </h3>
-            <p className="text-orange-100 text-center text-sm mb-3">
-              Transform Your Body in Weeks, Not Months!
-            </p>
-
-            {/* Benefit Points */}
-            <ul className="text-white text-sm space-y-1 mb-4">
-              <li className="flex items-center gap-2">
-                <span className="text-orange-300">✓</span> Boost Metabolism by 300%
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-orange-300">✓</span> Crush Cravings All Day
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="text-orange-300">✓</span> Energy That Lasts Hours
-              </li>
-            </ul>
-
-            {/* CTA Button */}
-            <button
-              onClick={handleClick}
-              className="w-full bg-white text-red-600 font-bold py-3 px-4 rounded-lg hover:bg-orange-50 transition-all duration-200 transform hover:scale-105 shadow-lg"
-            >
-              <span className="block text-lg">GET FASTBURN EXTREME</span>
-              <span className="block text-xs font-normal opacity-80">
-                🔥 50% OFF - Limited Stock!
-              </span>
-            </button>
-
-            {/* Trust Badge */}
-            <p className="text-center text-orange-200 text-xs mt-3">
-              ⭐⭐⭐⭐⭐ 4.9/5 Rating • 50,000+ Happy Customers
-            </p>
           </div>
 
-          {/* Bottom Strip */}
-          <div className="bg-black/20 py-1 px-3 text-center">
-            <p className="text-white text-xs font-medium">
-              ⚡ Fast Shipping • 30-Day Money Back Guarantee
-            </p>
-          </div>
+          {/* Headline */}
+          <h3 className="text-white text-xl font-bold text-center mb-2 leading-tight">
+            BURN FAT
+            <br />
+            <span className="text-yellow-300">3X FASTER</span>
+          </h3>
+
+          {/* Subheadline */}
+          <p className="text-white/90 text-sm text-center mb-4">
+            The #1 fat burner supplement to optimize your workouts
+          </p>
+
+          {/* Benefits */}
+          <ul className="text-white/80 text-xs space-y-2 mb-4">
+            <li className="flex items-center gap-2">
+              <span className="text-yellow-300">✓</span>
+              Accelerates metabolism
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-yellow-300">✓</span>
+              More energy for training
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-yellow-300">✓</span>
+              Visible results in 2-3 weeks
+            </li>
+          </ul>
+
+          {/* CTA Button */}
+          <a 
+            href="https://top-deal.me/a/NkRQzIjjYnHREwo"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full bg-white text-orange-600 font-bold text-center py-3 px-4 rounded-xl hover:bg-yellow-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            🔥 BUY NOW
+          </a>
+
+          {/* Urgency */}
+          <p className="text-center text-white/70 text-xs mt-3">
+            ⏰ Offer expires soon
+          </p>
+        </div>
+
+        {/* Bottom Strip */}
+        <div className="bg-black/10 py-2 px-4">
+          <p className="text-center text-white/60 text-xs">
+            🚚 Free Shipping | 🔒 Secure Payment
+          </p>
         </div>
       </div>
 
-      {/* Keyframe Animation */}
-      <style jsx global>{`
+      {/* CSS Animation */}
+      <style jsx>{`
         @keyframes slideUpFade {
           from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(20px) scale(0.95);
           }
           to {
             opacity: 1;
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
           }
+        }
+        .animate-slideUpFade {
+          animation: slideUpFade 0.5s ease-out forwards;
         }
       `}</style>
     </>
