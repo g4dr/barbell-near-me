@@ -494,6 +494,27 @@ export const MOCK_CITIES = [
   { id: '13', name: 'Boston', state: 'MA', country: 'USA', slug: 'boston', lat: 42.3601, lng: -71.0589, population: '685K', gym_count: '110+' },
   { id: '14', name: 'San Francisco', state: 'CA', country: 'USA', slug: 'san-francisco', lat: 37.7749, lng: -122.4194, population: '875K', gym_count: '140+' },
   { id: '15', name: 'Austin', state: 'TX', country: 'USA', slug: 'austin', lat: 30.2672, lng: -97.7431, population: '975K', gym_count: '160+' },
+  // 20 nouvelles villes ajoutées
+  { id: '16', name: 'San Diego', state: 'CA', country: 'USA', slug: 'san-diego', lat: 32.7157, lng: -117.1611, population: '1.4M', gym_count: '180+' },
+  { id: '17', name: 'Las Vegas', state: 'NV', country: 'USA', slug: 'las-vegas', lat: 36.1699, lng: -115.1398, population: '650K', gym_count: '140+' },
+  { id: '18', name: 'Portland', state: 'OR', country: 'USA', slug: 'portland', lat: 45.5152, lng: -122.6784, population: '650K', gym_count: '110+' },
+  { id: '19', name: 'Charlotte', state: 'NC', country: 'USA', slug: 'charlotte', lat: 35.2271, lng: -80.8431, population: '885K', gym_count: '120+' },
+  { id: '20', name: 'Detroit', state: 'MI', country: 'USA', slug: 'detroit', lat: 42.3314, lng: -83.0458, population: '670K', gym_count: '95+' },
+  { id: '21', name: 'Minneapolis', state: 'MN', country: 'USA', slug: 'minneapolis', lat: 44.9778, lng: -93.265, population: '425K', gym_count: '100+' },
+  { id: '22', name: 'Tampa', state: 'FL', country: 'USA', slug: 'tampa', lat: 27.9506, lng: -82.4572, population: '400K', gym_count: '95+' },
+  { id: '23', name: 'Orlando', state: 'FL', country: 'USA', slug: 'orlando', lat: 28.5383, lng: -81.3792, population: '310K', gym_count: '85+' },
+  { id: '24', name: 'Vancouver', state: 'BC', country: 'Canada', slug: 'vancouver', lat: 49.2827, lng: -123.1207, population: '675K', gym_count: '130+' },
+  { id: '25', name: 'Montreal', state: 'QC', country: 'Canada', slug: 'montreal', lat: 45.5017, lng: -73.5673, population: '1.7M', gym_count: '180+' },
+  { id: '26', name: 'Sydney', state: 'NSW', country: 'Australia', slug: 'sydney', lat: -33.8688, lng: 151.2093, population: '5.3M', gym_count: '250+' },
+  { id: '27', name: 'Melbourne', state: 'VIC', country: 'Australia', slug: 'melbourne', lat: -37.8136, lng: 144.9631, population: '5.0M', gym_count: '240+' },
+  { id: '28', name: 'Paris', state: '', country: 'France', slug: 'paris', lat: 48.8566, lng: 2.3522, population: '2.1M', gym_count: '280+' },
+  { id: '29', name: 'Berlin', state: '', country: 'Germany', slug: 'berlin', lat: 52.52, lng: 13.405, population: '3.6M', gym_count: '200+' },
+  { id: '30', name: 'Amsterdam', state: '', country: 'Netherlands', slug: 'amsterdam', lat: 52.3676, lng: 4.9041, population: '820K', gym_count: '100+' },
+  { id: '31', name: 'Dubai', state: '', country: 'UAE', slug: 'dubai', lat: 25.2048, lng: 55.2708, population: '3.3M', gym_count: '220+' },
+  { id: '32', name: 'Singapore', state: '', country: 'Singapore', slug: 'singapore', lat: 1.3521, lng: 103.8198, population: '5.7M', gym_count: '190+' },
+  { id: '33', name: 'Tokyo', state: '', country: 'Japan', slug: 'tokyo', lat: 35.6762, lng: 139.6503, population: '14M', gym_count: '400+' },
+  { id: '34', name: 'Mexico City', state: 'CDMX', country: 'Mexico', slug: 'mexico-city', lat: 19.4326, lng: -99.1332, population: '9.2M', gym_count: '260+' },
+  { id: '35', name: 'São Paulo', state: 'SP', country: 'Brazil', slug: 'sao-paulo', lat: -23.5505, lng: -46.6333, population: '12.3M', gym_count: '300+' },
 ];
 
 export const MOCK_SUPPLEMENTS = [
