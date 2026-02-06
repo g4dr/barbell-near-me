@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/app
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - NODE_ENV=production
     command: sh -c "npm install && npm run build && npm start"
@@ -21,3 +21,13 @@ services:
     restart: unless-stopped
     labels:
       - "coolify.managed=true"
+      - "traefik.enable=true"
+      - "traefik.http.routers.barbellnearme.rule=Host(`barbellnearme.com`)"
+      - "traefik.http.routers.barbellnearme.rule=Host(`www.barbellnearme.com`)"
+      - "traefik.http.services.barbellnearme.loadbalancer.server.port=3000"
+      - "traefik.http.routers.barbellnearme.tls.certresolver=le"
+
+networks:
+  default:
+    name: coolify
+    external: true
