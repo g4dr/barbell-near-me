@@ -5,7 +5,9 @@ import { Footer } from '@/components/Footer';
 export const metadata: Metadata = {
     title: "Rogue vs CAP Barbell Comparison 2026 | BarbellNearMe",
     description: "Rogue vs CAP: Compare two iconic American barbell brands. We break down quality, price, and performance to help you choose the right barbell for your gym.",
-    canonical: "https://barbellnearme.com/compare/rogue-vs-cap",
+    alternates: {
+        canonical: "https://barbellnearme.com/compare/rogue-vs-cap",
+    },
 };
 
 export default function ComparePage() {

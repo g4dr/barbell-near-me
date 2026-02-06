@@ -5,7 +5,9 @@ import { Footer } from '@/components/Footer';
 export const metadata: Metadata = {
     title: "Rogue vs Eleiko Barbell Comparison | BarbellNearMe",
     description: "Rogue and Eleiko represent two giants in the barbell industry. In this detailed comparison, we break down quality, price, and performance to help you choose.",
-    canonical: "https://barbellnearme.com/compare/rogue-vs-eleiko",
+    alternates: {
+        canonical: "https://barbellnearme.com/compare/rogue-vs-eleiko",
+    },
 };
 
 export default function ComparePage() {

@@ -167,7 +167,7 @@ export default function SEOPage() {
 
                 {/* Buying Tips Section */}
                 <section className="py-16 bg-white">
-                    <div class="max-w-4xl mx-auto px-4">
+                    <div className="max-w-4xl mx-auto px-4">
                         <h2 className="text-3xl font-bold text-gray-800 mb-8">Olympic Barbell Buying Tips: What to Consider Before Purchasing</h2>
                         
                         <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-2xl mb-8">

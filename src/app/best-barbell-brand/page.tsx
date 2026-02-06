@@ -6,7 +6,9 @@ import { Footer } from '@/components/Footer';
 export const metadata: Metadata = {
     title: "Best Barbell Brands 2026 | Top Manufacturers Compared",
     description: "Discover the best barbell brands for every budget and lifting style. We compare Rogue, Eleiko, Rep, CAP, and more to help you find your perfect barbell.",
-    canonical: "https://barbellnearme.com/best-barbell-brand",
+    alternates: {
+        canonical: 'https://barbellnearme.com/best-barbell-brand',
+    },
     keywords: "best barbell brands, barbell manufacturer, barbell company, Rogue Fitness, Eleiko, Rep Fitness, CAP Barbell, barbell brands comparison",
 };
 

@@ -5,7 +5,9 @@ import { Footer } from '@/components/Footer';
 export const metadata: Metadata = {
     title: "Bearing vs Bushing Barbell Comparison | BarbellNearMe",
     description: "Compare bearing vs bushings barbells. We break down pros/cons, best use cases, and help you choose the right sleeve system for your lifting style.",
-    canonical: "https://barbellnearme.com/compare/bearing-vs-bushing",
+    alternates: {
+        canonical: "https://barbellnearme.com/compare/bearing-vs-bushing",
+    },
 };
 
 export default function ComparePage() {

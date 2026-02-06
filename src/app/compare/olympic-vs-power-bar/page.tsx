@@ -5,7 +5,9 @@ import { Footer } from '@/components/Footer';
 export const metadata: Metadata = {
     title: "Olympic vs Powerlifting Bar Comparison | BarbellNearMe",
     description: "Olympic vs powerlifting bars: Compare shaft diameter, knurl pattern, and sleeve design to find the right bar for your training style.",
-    canonical: "https://barbellnearme.com/compare/olympic-vs-power-bar",
+    alternates: {
+        canonical: "https://barbellnearme.com/compare/olympic-vs-power-bar",
+    },
 };
 
 export default function ComparePage() {
